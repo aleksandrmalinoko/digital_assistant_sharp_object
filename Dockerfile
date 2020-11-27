@@ -1,27 +1,12 @@
-FROM ubuntu:16.04
+FROM python:3.6
 
-#MAINTANER Your Name "youremail@domain.tld"
+ENV FLASK_APP gentelella.py
 
-ENV MAIL_USERNAME=yourmail@test.com
-ENV MAIL_PASSWORD=testpass
-ENV SECRET_KEY=SuperRandomStringToBeUsedForEncryption
+COPY gentelella.py gunicorn.py requirements.txt config.py .env ./
+COPY app app
+COPY migrations migrations
 
-RUN apt-get update -y && \
-    apt-get install -y python3-pip python3-dev
-RUN apt-get install -y ruby-dev
-RUN gem install foreman
-# We copy just the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt /app/requirements.txt
+RUN pip install -r requirements.txt
 
-
-RUN apt-get install -y redis-server
-WORKDIR /app
-RUN apt-get install -y build-essential libpq-dev
-RUN pip3 install -r requirements.txt
-ENV PYTHONIOENCODING=UTF-8
-RUN pip3 install sqlalchemy_utils flask_dance flask_caching python-gitlab
-COPY . /app
-RUN python3 manage.py recreate_db && python3 manage.py setup_dev && python3 manage.py add_fake_data
-
-CMD ["foreman", "start" ,"-f", "Local"]
-
+EXPOSE 5000
+CMD ["gunicorn", "--config", "gunicorn.py", "gentelella:app"]

@@ -2,6 +2,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,pydev,pycharm+all,pycharm+iml,pycharm,python,jupyternotebooks,venv,visualstudio,visualstudiocode,jetbrains,jetbrains+all,jetbrains+iml,metaprogrammingsystem,flask,django,git,gitbook,tortoisegit,virtualenv,vim,react,vscode,cvs,vs,pvs
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,pydev,pycharm+all,pycharm+iml,pycharm,python,jupyternotebooks,venv,visualstudio,visualstudiocode,jetbrains,jetbrains+all,jetbrains+iml,metaprogrammingsystem,flask,django,git,gitbook,tortoisegit,virtualenv,vim,react,vscode,cvs,vs,pvs
 
+### Database ###
+app/database.db
+
+
 ### PowerPoint ###
 presentation.pptx
 ~$presentation.pptx
