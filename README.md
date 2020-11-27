@@ -11,5 +11,5 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=aleksandrmalinoko_digital_assistant_sharp_object&metric=security_rating)](https://sonarcloud.io/dashboard?id=aleksandrmalinoko_digital_assistant_sharp_object)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=aleksandrmalinoko_digital_assistant_sharp_object&metric=sqale_index)](https://sonarcloud.io/dashboard?id=aleksandrmalinoko_digital_assistant_sharp_object)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=aleksandrmalinoko_digital_assistant_sharp_object&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=aleksandrmalinoko_digital_assistant_sharp_object)
-# Цифровой ассистентs
+# Цифровой ассистент
 
