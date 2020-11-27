@@ -1,0 +1,242 @@
+{% extends "base_site.html" %}
+
+{% block title %} Plain Page {% endblock title %}
+
+{% block stylesheets %}
+  {{ super() }}
+{% endblock stylesheets %}
+
+{% block content %}
+    <div class="right_col" role="main">
+      <div class="">
+        <div class="page-title">
+          <div class="title_left">
+            <h3>Вакансия "DevOps"</h3>
+          </div>
+
+          <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+          <div class="col-md-12 col-md-12 col-md-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Описание вакансии</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+
+
+
+              <div class="x_content">
+                <div class="col-md-8 col-lg-8 col-sm-7">
+                <blockquote>
+                  <h4>Требуемый опыт работы: 3–6 лет</br>
+
+Полная занятость, удаленная работа</br></br>
+
+Пикабу – это информационно-развлекательное сообщество, которое читает больше 40 миллионов человек в месяц. Ежедневно нас посещают 2.7 миллиона уникальных пользователей.
+
+
+У нас очень много идей, поэтому ищем DevOps-инженера в отдел разработки, который поможет в системном администрировании нашего парка серверов. На данный момент у нас 1 опытный системный администратор в штате и 53 физических серверов.
+
+На серверах мы активно используем следующие технологии и ПО (в порядке важности для нас): Nginx, MySQL 5.7, Cassandra 2 и 3, Redis 5+, php 7.3 (php-fpm), RabbitMQ, Elasticsearch, Sphinx, ClickHouse, Kafka, Jenkins, Ansible, OpenVPN, Zabbix, Graylog (mongodb), Docker, KVM, nodejs.</br></br>
+
+Что надо делать:</br></br>
+
+Администрирование серверов Linux (KVM, LXC, Docker);</br>
+Администрирование различных БД: MySQL, Cassandra, Redis, ClickHouse, Elasticsearch, Sphinx;</br>
+Администрирование Nginx + php-fpm, сертификаты SSL;</br>
+Управление сетевым трафиком: настройка firewall, балансировка, настройка различных фильтров;</br>
+Мониторинг и поддержание работоспособности систем;</br>
+Резервирование БД и мощностей системы (failover);</br>
+Администрирование различного вспомогательного ПО: Jenkins, OpenVPN, Zabbix, Graylog, PMA, Kibana и др.</br>
+Сопровождение документации по серверной инфраструктуре (wiki);</br>
+Модернизация инфраструктуры, настройка нового оборудования, установка и конфигурирование различного ПО;</br>
+Оперативное решение инцидентов, связанных с работой серверов;</br>
+Организация нагрузочных тестов;</br>
+Консультирование команды разработки, общение с тех. поддержкой хостинга.</br>
+Что просим от вас:</br>
+Глубокие знание ОС Linux, Bash и KVM;</br>
+Большой опыт настройки Nginx и работы со стеком LEMP;</br>
+Понимание принципов и особенностей работы высоконагруженных систем;</br>
+Уверенные знания MySQL и опыт администрирования высоконагруженных инстансов MySQL (организация кластера, шардирование, партицирование);</br>
+Опыт администрирования Redis (кластер);</br>
+Опыт работы c git и настройки Zabbix, Jenkins (Ansible), OpenVPN;</br>
+Опыт управления распределенными сетями;</br>
+Готовность экстренной работы (в случае проблем) в ночное время или в выходной день;</br>
+Выполнение небольшого тестового;</br></br>
+Условия:</br></br>
+
+удаленная работа в команде;</br>
+официальное оформление;</br>
+полный рабочий день и гибкий график;</br>
+конкурентный уровень заработной платы по результатам собеседования и тестового задания;</br>
+почасовая оплата;</br>
+оплачиваемый отпуск и отсутствие по болезни;</br>
+оплачиваем ПО, необходимое для работы;</br>
+раз в год командировка на неделю в Москву для работы в главном офисе со своей командой (backend);</br>
+раз в год на несколько дней совместная встреча всего штата Пикабу за счет фирмы (проживание, транспорт).</br></br>
+Особенности работы у нас:</br></br>
+
+мы не работаем по Agile/Scrum. Рабочий процесс очень похож на Kanban: есть пул задач, который формирует проектный менеджер либо продуктовый менеджер. Задачи берутся из пула по приоритету важности, либо в свободном порядке;
+трекер задач - Jira, а для общения используем Slack;</br>
+для трекинга времени и управления пулом задач используем собственный удобный софт, который тесно интегрирован с Jira и Slack;</br>
+общение преимущественно текстом, асинхронное, в редких случаях созваниваемся для обсуждения деталей по задачам.</h4>
+
+                </blockquote>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                  <div class="profile_img">
+                    <div id="crop-avatar">
+                      <!-- Current avatar -->
+                      <img class="img-responsive avatar-view" src="/static/images/picture.jpg" alt="Avatar" title="Change the avatar">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Input Tags</label>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input id="tags_1" type="text" class="tags form-control" value="Python, KVM, LXC, Docker, MySQL, Cassandra, Redis, ClickHouse, Elasticsearch, Sphinx" />
+                    <div id="suggestions-container" style="position: relative; float: left; width: 200px; margin: 10px;"></div>
+                  </div>
+                </div>
+
+                <!-- Table of mans -->
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Таблица откликов</h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Settings 1</a>
+                    </li>
+                    <li><a href="#">Settings 2</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="x_content">
+
+              <div class="table-responsive">
+                <table class="table table-striped jambo_table bulk_action">
+                  <thead>
+                    <tr class="headings">
+                      <th>
+                        <input type="checkbox" id="check-all" class="flat">
+                      </th>
+                      <th class="column-title">ФИО </th>
+                      <th class="column-title">Дата отклика </th>
+                      <th class="column-title">Резюме </th>
+                      <th class="column-title">Процент соотвествия</th>
+                      <th class="column-title" style="width: 20%">Взаимодействие</th>
+                      <th class="bulk-actions" colspan="5">
+                        <a class="antoo" style="color:#fff; font-weight:500;">Что делаем? ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr class="even pointer">
+                      <td class="a-center ">
+                        <input type="checkbox" class="flat" name="table_records">
+                      </td>
+                      <td class=" ">Иванов Иван Иванович</td>
+                      <td class=" ">May 23, 2014 11:47:56 PM </td>
+                      <td class=" ">Devops инженер</td>
+                      <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="81"></div>
+                      </div>
+                      <small>81% Соответствия</small>
+                    </td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Просмотреть резюме </a>
+                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Отклонить </a>
+                      </td>
+                    </tr>
+                    <tr class="odd pointer">
+                      <td class="a-center ">
+                        <input type="checkbox" class="flat" name="table_records">
+                      </td>
+                      <td class=" ">Николаев Николай Николаевич</td>
+                      <td class=" ">May 23, 2014 11:30:12 PM</td>
+                      <td class=" ">Начинающий специалист</td>
+                      <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="57"></div>
+                      </div>
+                      <small>57% Соответствия</small>
+                    </td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Просмотреть резюме </a>
+                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Отклонить </a>
+                      </td>
+                    </tr>
+                    <tr class="even pointer">
+                      <td class="a-center ">
+                        <input type="checkbox" class="flat" name="table_records">
+                      </td>
+                      <td class=" ">Евгеньева Евгения Евгеньевна</td>
+                      <td class=" ">May 24, 2014 10:55:33 PM</td>
+                      <td class=" ">Буду для вас кем-угодно!!!</td>
+                      <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="34"></div>
+                      </div>
+                      <small>34% Соответствия</small>
+                    </td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Просмотреть резюме </a>
+                        <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Отклонить </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
+
+{% block javascripts %}
+  {{ super() }}
+{% endblock javascripts %}
