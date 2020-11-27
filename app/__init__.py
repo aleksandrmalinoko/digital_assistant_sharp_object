@@ -1,80 +1,80 @@
-import os
-
-from flask import Flask
-from flask_assets import Environment
-from flask_compress import Compress
+from flask import Flask, url_for
 from flask_login import LoginManager
-from flask_mail import Mail
-from flask_rq import RQ
 from flask_sqlalchemy import SQLAlchemy
-from flask_wtf import CSRFProtect
+from importlib import import_module
+from logging import basicConfig, DEBUG, getLogger, StreamHandler
+from os import path
 
-from app.assets import app_css, app_js, vendor_css, vendor_js
-from config import config as Config
-
-basedir = os.path.abspath(os.path.dirname(__file__))
-
-mail = Mail()
 db = SQLAlchemy()
-csrf = CSRFProtect()
-compress = Compress()
-
-# Set up Flask-Login
 login_manager = LoginManager()
-login_manager.session_protection = 'strong'
-login_manager.login_view = 'account.login'
 
 
-def create_app(config):
-    app = Flask(__name__)
-    config_name = config
-
-    if not isinstance(config, str):
-        config_name = os.getenv('FLASK_CONFIG', 'default')
-
-    app.config.from_object(Config[config_name])
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    # not using sqlalchemy event system, hence disabling it
-
-    Config[config_name].init_app(app)
-
-    # Set up extensions
-    mail.init_app(app)
+def register_extensions(app):
     db.init_app(app)
     login_manager.init_app(app)
-    csrf.init_app(app)
-    compress.init_app(app)
-    RQ(app)
 
-    # Register Jinja template functions
-    from .utils import register_template_utils
-    register_template_utils(app)
 
-    # Set up asset pipeline
-    assets_env = Environment(app)
-    dirs = ['assets/styles', 'assets/scripts']
-    for path in dirs:
-        assets_env.append_path(os.path.join(basedir, path))
-    assets_env.url_expire = True
+def register_blueprints(app):
+    for module_name in ('base', 'forms', 'ui', 'home', 'tables', 'data', 'additional', 'base'):
+        module = import_module('app.{}.routes'.format(module_name))
+        app.register_blueprint(module.blueprint)
 
-    assets_env.register('app_css', app_css)
-    assets_env.register('app_js', app_js)
-    assets_env.register('vendor_css', vendor_css)
-    assets_env.register('vendor_js', vendor_js)
 
-    # Configure SSL if platform supports it
-    if not app.debug and not app.testing and not app.config['SSL_DISABLE']:
-        from flask_sslify import SSLify
-        SSLify(app)
+def configure_database(app):
 
-    # Create app blueprints
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+    @app.before_first_request
+    def initialize_database():
+        db.create_all()
 
-    from .account import account as account_blueprint
-    app.register_blueprint(account_blueprint, url_prefix='/account')
+    @app.teardown_request
+    def shutdown_session(exception=None):
+        db.session.remove()
 
-    from .admin import admin as admin_blueprint
-    app.register_blueprint(admin_blueprint, url_prefix='/admin')
 
+def configure_logs(app):
+    basicConfig(filename='error.log', level=DEBUG)
+    logger = getLogger()
+    logger.addHandler(StreamHandler())
+
+
+def apply_themes(app):
+    """
+    Add support for themes.
+
+    If DEFAULT_THEME is set then all calls to
+      url_for('static', filename='')
+      will modfify the url to include the theme name
+
+    The theme parameter can be set directly in url_for as well:
+      ex. url_for('static', filename='', theme='')
+
+    If the file cannot be found in the /static/<theme>/ lcation then
+      the url will not be modified and the file is expected to be
+      in the default /static/ location
+    """
+    @app.context_processor
+    def override_url_for():
+        return dict(url_for=_generate_url_for_theme)
+
+    def _generate_url_for_theme(endpoint, **values):
+        if endpoint.endswith('static'):
+            themename = values.get('theme', None) or \
+                app.config.get('DEFAULT_THEME', None)
+            if themename:
+                theme_file = "{}/{}".format(themename, values.get('filename', ''))
+                if path.isfile(path.join(app.static_folder, theme_file)):
+                    values['filename'] = theme_file
+        return url_for(endpoint, **values)
+
+
+def create_app(config, selenium=False):
+    app = Flask(__name__, static_folder='base/static')
+    app.config.from_object(config)
+    if selenium:
+        app.config['LOGIN_DISABLED'] = True
+    register_extensions(app)
+    register_blueprints(app)
+    configure_database(app)
+    configure_logs(app)
+    apply_themes(app)
     return app
