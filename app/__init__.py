@@ -39,7 +39,7 @@ def configure_logs(app):
 
 def apply_themes(app):
     """
-    Add support for themes.
+    Add support for themes. Hello
 
     If DEFAULT_THEME is set then all calls to
       url_for('static', filename='')
