@@ -13,3 +13,13 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=aleksandrmalinoko_digital_assistant_sharp_object&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=aleksandrmalinoko_digital_assistant_sharp_object)
 # Цифровой ассистент
 
+## Запуск приложения в Run Flask Gentelella in a docker контейнере с помощью nginx и базы данных PostgreSQL 
+
+### 1. Получить код
+    git clone https://github.com/aleksandrmalinoko/digital_assistant_sharp_object.git 
+    cd digital_assistant_sharp_object
+
+### 2. Запуск сервисов
+    sudo docker-compose pull && sudo docker-compose build && sudo docker-compose up -d
+
+### 3. Перейдите на http://server_address, создайте акканут и зайдите в него

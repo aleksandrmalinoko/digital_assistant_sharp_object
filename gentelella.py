@@ -9,8 +9,7 @@ get_config_mode = environ.get('GENTELELLA_CONFIG_MODE', 'Debug')
 
 try:
     config_mode = config_dict[get_config_mode.capitalize()]
+    app = create_app(config_mode)
+    Migrate(app, db)
 except KeyError:
     exit('Error: Invalid GENTELELLA_CONFIG_MODE environment variable entry.')
-
-app = create_app(config_mode)
-Migrate(app, db)
