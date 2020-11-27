@@ -15,13 +15,14 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
-    for module_name in ('base', 'forms', 'ui', 'home', 'HR_content', 'tables', 'data', 'additional', 'base'):
+
+    for module_name in ('base', 'forms', 'ui', 'user', 'home', 'HR_content' 'tables', 'data', 'additional', 'kgraph', 'base'):
+ 
         module = import_module('app.{}.routes'.format(module_name))
         app.register_blueprint(module.blueprint)
 
 
 def configure_database(app):
-
     @app.before_first_request
     def initialize_database():
         db.create_all()
@@ -52,6 +53,7 @@ def apply_themes(app):
       the url will not be modified and the file is expected to be
       in the default /static/ location
     """
+
     @app.context_processor
     def override_url_for():
         return dict(url_for=_generate_url_for_theme)
@@ -59,7 +61,7 @@ def apply_themes(app):
     def _generate_url_for_theme(endpoint, **values):
         if endpoint.endswith('static'):
             themename = values.get('theme', None) or \
-                app.config.get('DEFAULT_THEME', None)
+                        app.config.get('DEFAULT_THEME', None)
             if themename:
                 theme_file = "{}/{}".format(themename, values.get('filename', ''))
                 if path.isfile(path.join(app.static_folder, theme_file)):
