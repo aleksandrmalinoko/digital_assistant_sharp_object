@@ -27,14 +27,17 @@
 
                     <div class="x_content">
                         <br/>
-                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST">
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="vacancy">Vacancy
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" name="vacancy" required="required"
-                                           class="form-control col-md-7 col-xs-12">
+                                    <select class="form-control" name="vacancy">
+                                        {% for d in data['vacancy'] %}
+                                            <option> {{ d }} </option>
+                                        {% endfor %}
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -73,20 +76,28 @@
                                            class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
-
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">E-mail <span
+                                        class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="email" required="required"
+                                           class="form-control col-md-7 col-xs-12">
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <div class="control-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Input Tags</label>
-                                    <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <input id="tags_1" name="tags" type="text" class="tags form-control"
-                                               value="social, adverts, sales"/>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="tags_1" name="tags" type="text" class="tags form-control"/>
+{#                                               value="social, adverts, sales"/>#}
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Profile</label>
-                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
                                     <textarea id="profile" required="required" class="form-control" name="profile"
                                               data-parsley-trigger="keyup"
                                               data-parsley-validation-threshold="10"></textarea>
