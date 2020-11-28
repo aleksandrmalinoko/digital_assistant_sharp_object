@@ -1,0 +1,196 @@
+{% extends "base_site.html" %}
+
+{% block title %} Plain Page {% endblock title %}
+
+{% block stylesheets %}
+    {{ super() }}
+{% endblock stylesheets %}
+
+{% block content %}
+    <div class="right_col" role="main">
+    <div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Вакансия "Java"</h3>
+        </div>
+
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+    <div class="col-md-12 col-md-12 col-md-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Описание вакансии</h2>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="x_content">
+                <div class="col-md-8 col-lg-8 col-sm-7">
+                    <blockquote>
+                        <h4>Требуемый опыт работы: 3–6 лет</br>
+                            Полная занятость, полный день</br></br>
+
+                            Обязанности:</br>
+                            - Разработка и сопровождение решений на основе системы Calypso (код + настройки);</br>
+                            - Анализ кода ядра системы при возникновении запросов со стороны аналитиков,
+                            бизнес-заказчиков;</br>
+                            - Участие в подготовке и анализе требований заказчика (совместная работа с аналитиками или
+                            самостоятельный анализ);</br>
+                            - Возможны задачи по изменению инфраструктуры системы;</br>
+                            - Написание JUnit тестов; - рефакторинг кода.</br></br>
+                            Требования:</br>
+                            - Уверенное знания Java SE не ниже 1.6;</br>
+                            - Знание Java EE – EJB 3.x, MDB и др;</br>
+                            - Опыт написания запросов на SQL;</br>
+                            - Опыт работы с SNV, GIT;</br>
+                            - Опыт работы с JMX приветствуется;</br>
+                            - Опыт работы с системой Calypso приветствуется</br></br>
+                            Условия:</br>
+                            - Работа в крупнейшем банке России;</br>
+                            - Оформление согласно ТК РФ;</br>
+                            - Расширенный социальный пакет;</br>
+                            - Условия для развития и обучения</h4>
+
+                    </blockquote>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                    <div class="profile_img">
+                        <div id="crop-avatar">
+                            <!-- Current avatar -->
+                            <img class="img-responsive avatar-view" src="/static/images/logotip.png" alt="Avatar"
+                                 title="Change the avatar">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="control-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-2">Input Tags</label>
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                    <input id="tags_1" type="text" class="tags form-control"
+                           value="SOLID, MVC, MySQL, PostgressSQL, XML, JDBC, Hibernate, Spring, Scala, UnitTests, Git, Scrum"/>
+                    <div id="suggestions-container"
+                         style="position: relative; float: left; width: 200px; margin: 10px;"></div>
+                </div>
+            </div>
+
+            <!-- Table of mans -->
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Таблица откликов</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table bulk_action">
+                                <thead>
+                                <tr class="headings">
+                                    <th>
+                                        <input type="checkbox" id="check-all" class="flat">
+                                    </th>
+                                    <th class="column-title">ФИО</th>
+                                    <th class="column-title">Дата отклика</th>
+                                    <th class="column-title">Резюме</th>
+                                    <th class="column-title">Процент соотвествия</th>
+                                    <th class="column-title" style="width: 20%">Взаимодействие</th>
+                                    <th class="bulk-actions" colspan="5">
+                                        <a class="antoo" style="color:#fff; font-weight:500;">Что делаем? ( <span
+                                                class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                    </th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td class=" ">Иванов Иван Иванович</td>
+                                    <td class=" ">May 23, 2014 11:47:56 PM</td>
+                                    <td class=" ">Java (Разработчик)</td>
+                                    <td class="project_progress">
+                                        <div class="progress progress_sm">
+                                            <div class="progress-bar bg-green" role="progressbar"
+                                                 data-transitiongoal="85"></div>
+                                        </div>
+                                        <small>85% Соответствия</small>
+                                    </td>
+                                    <td>
+                                        <a href="/HR_content/profile_Ivanov" class="btn btn-primary btn-xs">
+                                            <i class="fa fa-folder"></i>Просмотреть резюме </a>
+                                        <a href="/HR_content/HR_inbox" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>
+                                            Отправить тест</a>
+                                        <a href="/HR_content/HR_calendar" class="btn btn-success btn-xs">
+                                            <i class="fa fa-calendar"></i>
+                                            Назначить собеседование</a>
+                                    </td>
+                                </tr>
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td class=" ">Петров Петр Петрович</td>
+                                    <td class=" ">May 23, 2014 11:30:12 PM</td>
+                                    <td class=" ">Java (Разработчик)</td>
+                                    <td class="project_progress">
+                                        <div class="progress progress_sm">
+                                            <div class="progress-bar bg-green" role="progressbar"
+                                                 data-transitiongoal="63"></div>
+                                        </div>
+                                        <small>63% Соответствия</small>
+                                    </td>
+                                    <td>
+                                        <a href="/HR_content/profile_Petrov" class="btn btn-primary btn-xs">
+                                            <i class="fa fa-folder"></i>Просмотреть резюме </a>
+                                        <a href="/HR_content/HR_inbox" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>
+                                            Отправить тест</a>
+                                        <a href="/HR_content/HR_calendar" class="btn btn-success btn-xs">
+                                            <i class="fa fa-calendar"></i>
+                                            Назначить собеседование</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block javascripts %}
+    {{ super() }}
+{% endblock javascripts %}
