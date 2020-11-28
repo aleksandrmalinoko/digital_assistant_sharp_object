@@ -215,3 +215,4 @@
       this.$clone.remove();
       this.$clone = null;
     },
+  }
