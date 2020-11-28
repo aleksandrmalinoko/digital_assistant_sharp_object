@@ -53,15 +53,15 @@
                         </div>
                         <div class="x_content">
                             <div id="sample">
-                                <div id="myDiagramDiv" style="border: solid 1px black; width:100%; height:600px;"></div>
+                                <div id="myDiagramDiv" style="border: solid 1px black; width:100%; height:1000px;"></div>
                                 <p>https://www.16personalities.com/ru/test-lichnosti</p>
-                                <button id="SaveButton" onclick="save()">Save</button>
-                                <button onclick="load()">Load</button>
-                                <button onclick="layoutAll()">Layout</button>
-                                                                Diagram Model saved in JSON format:
+<!--                                <button id="SaveButton" onclick="save()">Save</button>-->
+<!--                                <button onclick="load()">Load</button>-->
+<!--                                <button onclick="layoutAll()">Layout</button>-->
+<!--                                                                Diagram Model saved in JSON format:-->
                                 <br/>
                                 <form>
-                                <textarea name ="jsonModel" id="mySavedModel" style="width:100%;height:400px;">
+                                <textarea name ="jsonModel" id="mySavedModel" style="width:100%;height:400px; display: none">
 { "class": "TreeModel",
   "nodeDataArray": [
 {"key":0, "text":"business", "loc":"1 72", "scale":1.1},
@@ -69,25 +69,15 @@
 {"text":"Hard skills", "brush":"red", "dir":"left", "parent":0, "key":-22, "loc":"-18.99999999999997 83.25", "font":"bold 13px sans-serif", "scale":1.1},
 {"text":"Тип личности", "brush":"red", "dir":"right", "parent":-21, "key":-46, "loc":"158.846142578125 83.25"},
 {"text":"Аналитики", "brush":"lightcoral", "dir":"right", "parent":-46, "key":-47, "loc":"259.873974609375 -72.75"},
-{"text":"Дипломаты", "brush":"darkseagreen", "dir":"right", "parent":-46, "key":-48, "loc":"259.873974609375 31.25"},
 {"text":"Хранители", "brush":"skyblue", "dir":"right", "parent":-46, "key":-49, "loc":"259.873974609375 135.25"},
 {"text":"Искатели", "brush":"coral", "dir":"right", "parent":-46, "key":-50, "loc":"259.873974609375 239.25"},
 {"text":"Артист", "brush":"coral", "dir":"right", "parent":-50, "key":-51, "loc":"336.088818359375 200.25"},
 {"text":"Делец", "brush":"coral", "dir":"right", "parent":-50, "key":-52, "loc":"336.088818359375 226.25"},
 {"text":"Развлекатель", "brush":"coral", "dir":"right", "parent":-50, "key":-53, "loc":"336.088818359375 252.25"},
 {"text":"Виртуоз", "brush":"coral", "dir":"right", "parent":-50, "key":-54, "loc":"336.088818359375 278.25"},
-{"text":"Администратор", "brush":"skyblue", "dir":"right", "parent":-49, "key":-55, "loc":"344.899365234375 96.25"},
-{"text":"Защитник", "brush":"skyblue", "dir":"right", "parent":-49, "key":-56, "loc":"344.899365234375 122.25"},
-{"text":"Менеджер", "brush":"skyblue", "dir":"right", "parent":-49, "key":-57, "loc":"344.899365234375 148.25"},
 {"text":"Консул", "brush":"skyblue", "dir":"right", "parent":-49, "key":-58, "loc":"344.899365234375 174.25"},
 {"text":"Стратег", "brush":"lightcoral", "dir":"right", "parent":-47, "key":-59, "loc":"343.966259765625 -111.75"},
-{"text":"Ученый", "brush":"lightcoral", "dir":"right", "parent":-47, "key":-60, "loc":"343.966259765625 -85.75"},
 {"text":"Командир", "brush":"lightcoral", "dir":"right", "parent":-47, "key":-61, "loc":"343.966259765625 -59.75"},
-{"text":"Полемист", "brush":"lightcoral", "dir":"right", "parent":-47, "key":-62, "loc":"343.966259765625 -33.75"},
-{"text":"Активист", "brush":"darkseagreen", "dir":"right", "parent":-48, "key":-63, "loc":"349.120556640625 -7.75"},
-{"text":"Посредник", "brush":"darkseagreen", "dir":"right", "parent":-48, "key":-64, "loc":"349.120556640625 18.25"},
-{"text":"Тренер", "brush":"darkseagreen", "dir":"right", "parent":-48, "key":-65, "loc":"349.120556640625 44.25"},
-{"text":"Борец", "brush":"darkseagreen", "dir":"right", "parent":-48, "key":-66, "loc":"349.120556640625 70.25"},
 {"text":"Python", "brush":"red", "dir":"left", "parent":-22, "key":-25, "loc":"-111.33090820312498 -126.0369873046875"},
 {"text":"Java", "brush":"red", "dir":"left", "parent":-22, "key":-26, "loc":"-111.33090820312498 292.5369873046875"},
 {"text":"Django [3]", "brush":"red", "dir":"left", "parent":-25, "key":-28, "loc":"-171.80356445312498 -382.1109619140625"},
