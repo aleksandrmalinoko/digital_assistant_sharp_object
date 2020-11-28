@@ -156,6 +156,7 @@ def add_database(vacancy, id_res):
 
 
 def get_vacancy():
+    #Test
     engine = create_engine('sqlite:///resume.db')
     data = engine.execute("select position, type from vacancy")
     result = list()
