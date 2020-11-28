@@ -1,0 +1,151 @@
+{% extends "base_site.html" %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block stylesheets %}
+  {{ super() }}
+{% endblock stylesheets %}
+
+{% block content %}
+  <div class="right_col" role="main">
+    <div class="">
+      <div class="page-title">
+        <div class="title_left">
+          <h3>Профиль соискателя</h3>
+        </div>
+
+        <div class="title_right">
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Резюме на должность <small>Python программист</small></h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Settings 1</a>
+                    </li>
+                    <li><a href="#">Settings 2</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                <div class="profile_img">
+                  <div id="crop-avatar">
+                    <!-- Current avatar -->
+                    <img class="img-responsive avatar-view" src="/static/images/Nicolaev.jpg" alt="Avatar" title="Change the avatar">
+                  </div>
+                </div>
+                <h3>Николаев Николай Николаевич</h3>
+
+                <ul class="list-unstyled user_data">
+                  <li><i class="fa fa-map-marker user-profile-icon"></i> Серпухов, Россия
+                  </li>
+
+                  <li>
+                    <i class="fa fa-briefcase user-profile-icon"></i> Безработный
+                  </li>
+
+                  <li class="m-top-xs">
+                    <i class="fa fa-external-link user-profile-icon"></i>
+                    <a href="http://www.kimlabs.com/profile/" target="_blank">www.nicexample.com</a>
+                  </li>
+                </ul>
+
+                <a class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Связаться с соискателем</a>
+                <br />
+
+                <!-- start skills -->
+                <h4>Соотвествие вакансиям</h4>
+                <ul class="list-unstyled user_data">
+                  <li>
+                    <p>Python программист</p>
+                    <div class="progress" style="height: 20px" >
+                      <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="81">81%</div>
+                    </div>
+                  </li>
+                  <li>
+                    <p>Java программист</p>
+                    <div class="progress" style="height: 20px">
+                      <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="18">18%</div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- end of skills -->
+
+              </div>
+              <div class="col-md-9 col-sm-9 col-xs-12">
+
+                <div class="profile_title">
+                  <div class="col-md-6">
+                    <h2>Информация о соискателе</h2>
+                  </div>
+                </div>
+                </br>
+                <!-- start of user-activity-graph -->
+                <p>Мужчина, 32 лет, родился 12 января 1988</br></br>
+
+Серпухов, готов к переезду (Санкт-Петербург, Москва), готов к командировкам</br></br>
+
+<strong>Программист Python</strong></br>
+150000 руб.</br>
+Информационные технологии, интернет, телеком</br>
+    -Программирование, Разработка</br>
+    -Интернет</br>
+    -Web мастер</br></br>
+
+Занятость: полная занятость</br>
+
+График работы: полный день</br></p>
+
+                <h4>Опыт работы 8 лет 3 месяца</h4>
+<p>Хочу попасть в команду с крутым коллективом, в котором смогу реализовывать себя и постоянно развиваться.
+Ссылка на Git: https://github.com/nicgit</p>
+</br></br>
+
+                <!-- end of user-activity-graph -->
+                <div class="control-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Ключевые навыки</label>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input id="tags_1" type="text" class="tags form-control" value="Django, API, Agile, Docker, Linux, MachineLearning, Git, ContinuesInteegration, MySQL, PostgresSQL, React, Flask, REST, AWS, Kubernetes, GoogleCloudPlatform, Microservices" />
+                    <div id="suggestions-container" style="position: relative; float: left; width: 150px; margin: 10px;"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block javascripts %}
+  {{ super() }}
+  <!-- morris.js -->
+  <script src="{{ url_for('static', filename='vendors/raphael/raphael.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendors/morris.js/morris.min.js') }}"></script>
+{% endblock javascripts %}
